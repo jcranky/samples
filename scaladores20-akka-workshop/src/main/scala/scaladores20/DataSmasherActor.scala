@@ -5,6 +5,9 @@ import java.text.NumberFormat
 import java.util.Locale
 import scala.io.Source
 
+/**
+ * Main / supervisor actor.
+ */
 class DataSmasherActor extends Actor {
   def receive = {
     case Start =>
