@@ -17,11 +17,14 @@ class DataSmasherActor extends Actor {
         
       1 to 150 foreach { x =>
       
+        // determining file to be processed
         val data = Source.fromFile("src/main/resources/TransfRecAcoesEstadoMunicipios-2012.csv", "iso-8859-1")
         
+        // grouping cities by states
         // tail used to remove the headers
         val dataPerState = data.getLines.toList.tail.groupBy(line => line.split(";")(3))
         
+        // extracting data
         val valuePerState = dataPerState.map{
           case (state, entries) => (state, entries.foldLeft(0d)(
                 (total, line) => total + line.split(";").last.replaceAll(",", ".").toDouble))
