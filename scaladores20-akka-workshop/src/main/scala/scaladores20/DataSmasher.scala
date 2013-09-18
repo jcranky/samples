@@ -8,9 +8,7 @@ import scala.io.Source
 class DataSmasherActor extends Actor {
   def receive = {
     case Start =>
-      println("just starting...")
-      val startTime = System.nanoTime
-      
+      val startTime = System.nanoTime      
       try {
         // obviously we need a better way to get the file ... this is just a test scenario
         // data source: http://www.portaldatransparencia.gov.br/planilhas/index.asp
