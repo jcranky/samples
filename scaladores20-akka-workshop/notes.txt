@@ -1,0 +1,57 @@
+
+-- alguns conceitos básicos a serem explicados / reforçados antes de qualquer atividade:
+
+ - o que é um ator, e suas partes: estado, comportamento e mailbox
+  -- código criando ator, filho de system
+  -- código enviando mensagem simples
+
+ - importante:
+  -- mensagems DEVEM ser mutáveis
+  -- estado interno dos atores NÃO DEVE ser compartilhado
+    - mas uma versão imutável pode ser distribuída, se necessário
+
+ - boas práticas:
+  -- responsabilidade muito bem definida, e o menor possível
+  -- se for o caso, quebrar tarefas em pedaços pequenos e delegar
+
+ - hierarquia de atores e supervisão
+  -- código criando atores filhos de outro ator
+
+ - lembrete: documentação oficial é nota 10: akka.io/docs
+
+
+-- tarefas:
+ - dividir participantes em grupos de 2 ou 3 pessoas
+   - dependendo da quantidade de pessoas e notebooks disponíveis
+   
+ - apresentar um diagrama com a hierarquia de atores a serem utilizados
+
+ - Main
+  -- criar system
+  -- criar DataSmasherActor
+  -- enviar mensagem requisitando processamento de dados
+  -- printar resultado, quando obtido
+   - esse é o único ponto no qual será necessário código blocante / Await
+
+ - DataSmasherActor
+  -- ler informações sobre o arquivo / dados a serem processados
+  -- dividir pedaços a serem processados separadamente
+  -- enviar informações sobre os pedaços a atores filhos
+  -- após um timeout, enviar ordem de processamento novamente para os trechos que não tiverem sido respondidos
+  -- quando receber todas as respostas, devolver resultado agregado ao sender
+  
+ - DataPieceSmasherActor
+  -- receber informações sobre trechos a serem processados
+  -- ler esses trechos do arquivo
+  -- ler / calcular algo (O QUE ???)
+    - esse calculo poderia ser delegado a outro(s) ator(es), dependendo da complexidade
+    - em caso de necessidade de vários dados, essa separação faria mais sentido ainda
+  -- devolver resultado ao sender
+
+
+
+
+
+
+
+
