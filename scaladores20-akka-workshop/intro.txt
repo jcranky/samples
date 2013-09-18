@@ -6,7 +6,7 @@
   -- código enviando mensagem simples
 
  - importante:
-  -- mensagems DEVEM ser mutáveis
+  -- mensagems DEVEM ser imutáveis
   -- estado interno dos atores NÃO DEVE ser compartilhado
     - mas uma versão imutável pode ser distribuída, se necessário
 
