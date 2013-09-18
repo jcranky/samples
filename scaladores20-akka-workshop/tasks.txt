@@ -16,14 +16,12 @@
   -- ler informações sobre o arquivo / dados a serem processados
   -- dividir pedaços a serem processados separadamente, por estado
   -- enviar informações sobre os pedaços a atores filhos
+  -- os filhos deverão devolver a soma dos valores repassados às cidades do estado
   -- quando receber todas as respostas, devolver resultado agregado ao sender
   
  - DataPieceSmasherActor
-  -- receber informações sobre trechos a serem processados
-  -- ler esses trechos do arquivo
-  -- ler / calcular algo (O QUE ???)
-    - esse calculo poderia ser delegado a outro(s) ator(es), dependendo da complexidade
-    - em caso de necessidade de vários dados, essa separação faria mais sentido ainda
+  -- receber trechos a serem processados
+  -- calcular soma dos valores de repasse às cidades
   -- devolver resultado ao sender
 
 
