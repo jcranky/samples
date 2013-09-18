@@ -15,7 +15,7 @@ class DataSmasherActor extends Actor {
         // obviously we need a better way to get the file ... this is just a test scenario
         // data source: http://www.portaldatransparencia.gov.br/planilhas/index.asp
         
-        val data = Source.fromFile("src/main/resources/TransfRecAcoesEstadoMunicipios8442_08.csv", "iso-8859-1")
+        val data = Source.fromFile("src/main/resources/TransfRecAcoesEstadoMunicipios8442_08-2012.csv", "iso-8859-1")
         
         // tail used to remove the headers
         val dataPerState = data.getLines.toList.tail.groupBy(line => line.split(";")(3))
