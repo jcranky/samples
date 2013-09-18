@@ -15,7 +15,7 @@ class DataSmasherActor extends Actor {
       // obviously we need a better way to get the file ... this is just a test scenario
       // data source: http://www.portaldatransparencia.gov.br/planilhas/index.asp
         
-      1 to 100 foreach { x =>
+      1 to 150 foreach { x =>
       
         val data = Source.fromFile("src/main/resources/TransfRecAcoesEstadoMunicipios-2012.csv", "iso-8859-1")
         
@@ -30,7 +30,7 @@ class DataSmasherActor extends Actor {
         valuePerState.foreach {
           case (state, value) =>
             val formatter = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"))
-            println(s"$state - ${formatter.format(value)}")
+            //println(s"$state - ${formatter.format(value)}")
         }
       }
       
